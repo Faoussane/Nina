@@ -1,16 +1,16 @@
 import streamlit as st
 
-print("Salut, c'est Faoussane,🤓")
+st.title("Message d'anniversaire")
+
 nom_esperé = "nina"
 date_naissance_esperee = "2004"
-
-st.title("Message d'anniversaire")
 
 nom = st.text_input("Entrez votre nom :").strip().lower()
 if nom == nom_esperé:
     date_naissance = st.text_input("Entrez votre date de naissance (Année seulement) :").strip()
     if date_naissance == date_naissance_esperee:
         st.success("Joyeux anniversaire, Nina ! 🎉")
+        st.image("https://i.postimg.cc/d0YTwtQ2/NINA.jpg", caption="Joyeux anniversaire, Nina !", use_container_width=True)
         st.markdown("""
         ### Message personnalisé :
         Salut Nina😁,
@@ -26,10 +26,6 @@ if nom == nom_esperé:
         Avec toute mon affection,  
         *Faoussane*  
         """)
-
-        # Affichage de l'image
-        image_path = "/mnt/data/file-Fiyf1sMuZri8RhWEKwSm6B"
-        st.image(image_path, caption="Joyeux anniversaire, Nina !", use_column_width=True)
     else:
         st.error("Ce message n'est pas destiné à vous, programme terminé.")
 else:
